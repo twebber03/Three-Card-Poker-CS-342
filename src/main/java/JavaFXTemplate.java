@@ -3,17 +3,23 @@ import javafx.animation.PauseTransition;
 import javafx.animation.RotateTransition;
 import javafx.animation.SequentialTransition;
 import javafx.application.Application;
-
+import javafx.scene.control.Button;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import javafx.scene.layout.HBox;
 import javafx.util.Duration;
 
 
 public class JavaFXTemplate extends Application {
+
+	Button button1=new Button("Exit"), button2=new Button("Play");
+	TextField title=new TextField(), message=new TextField();
+    BorderPane layout=new BorderPane();
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -24,39 +30,50 @@ public class JavaFXTemplate extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
-		primaryStage.setTitle("Welcome to JavaFX");
-		
-		 Rectangle rect = new Rectangle (100, 40, 100, 100);
-	     rect.setArcHeight(50);
-	     rect.setArcWidth(50);
-	     rect.setFill(Color.VIOLET);
-
-	     RotateTransition rt = new RotateTransition(Duration.millis(5000), rect);
-	     rt.setByAngle(270);
-	     rt.setCycleCount(4);
-	     rt.setAutoReverse(true);
-	     SequentialTransition seqTransition = new SequentialTransition (
-	         new PauseTransition(Duration.millis(500)),
-	         rt
-	     );
-	     seqTransition.play();
-	     
-	     FadeTransition ft = new FadeTransition(Duration.millis(5000), rect);
-	     ft.setFromValue(1.0);
-	     ft.setToValue(0.3);
-	     ft.setCycleCount(4);
-	     ft.setAutoReverse(true);
-
-	     ft.play();
-	     BorderPane root = new BorderPane();
-	     root.setCenter(rect);
-	     
-	     Scene scene = new Scene(root, 700,700);
-			primaryStage.setScene(scene);
-			primaryStage.show();
-		
-				
-		
+		primaryStage.setTitle("Welcome Screen");
+		button1.setMinWidth(200);
+		button2.setMinWidth(200);
+		title.setText("THREE CARD POKER");
+		title.setMinWidth(600);
+		message.setText("Welcome to 3 Card Poker! Get ready to trust your luck and skill! Are you ready to play!");
+        message.setMinWidth(400);
+//		primaryStage.setTitle("Welcome to JavaFX");
+//
+//		 Rectangle rect = new Rectangle (100, 40, 100, 100);
+//	     rect.setArcHeight(50);
+//	     rect.setArcWidth(50);
+//	     rect.setFill(Color.VIOLET);
+//
+//	     RotateTransition rt = new RotateTransition(Duration.millis(5000), rect);
+//	     rt.setByAngle(270);
+//	     rt.setCycleCount(4);
+//	     rt.setAutoReverse(true);
+//	     SequentialTransition seqTransition = new SequentialTransition (
+//	         new PauseTransition(Duration.millis(500)),
+//	         rt
+//	     );
+//	     seqTransition.play();
+//
+//	     FadeTransition ft = new FadeTransition(Duration.millis(5000), rect);
+//	     ft.setFromValue(1.0);
+//	     ft.setToValue(0.3);
+//	     ft.setCycleCount(4);
+//	     ft.setAutoReverse(true);
+//
+//	     ft.play();
+//	     BorderPane root = new BorderPane();
+//	     root.setCenter(rect);
+//
+//	     Scene scene = new Scene(root, 700,700);
+//			primaryStage.setScene(scene);
+//			primaryStage.show();
+		HBox buttonbox=new HBox(20, button1, button2);
+		layout.setTop(title);
+		layout.setCenter(message);
+		layout.setBottom(buttonbox);
+		Scene window=new Scene(layout, 700, 700);
+		primaryStage.setScene(window);
+		primaryStage.show();
 	}
 
 }
