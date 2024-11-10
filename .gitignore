@@ -1,0 +1,9 @@
+# Maven
+target/
+
+# Compiled class files
+*.class
+
+# Test reports
+*.txt
+*.xml

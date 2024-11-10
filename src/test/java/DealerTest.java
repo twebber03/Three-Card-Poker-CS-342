@@ -20,7 +20,7 @@ public class DealerTest {
     // Test 6: Check that dealHand deals exactly 3 cards
     @Test
     public void testDealHandSize() {
-        ArrayList<Card> hand = dealer.dealHand();
+        ArrayList<Card> hand = dealer.dealDealersHand();
         assertEquals(3, hand.size(), "dealHand should deal exactly 3 cards");
     }
 
@@ -60,8 +60,8 @@ public class DealerTest {
     // Test 10: Check that the dealer’s hand is cleared between deals
     @Test
     public void testDealersHandClearedBetweenDeals() {
-        ArrayList<Card> firstHand = dealer.dealHand();
-        ArrayList<Card> secondHand = dealer.dealHand();
+        ArrayList<Card> firstHand = dealer.dealDealersHand();
+        ArrayList<Card> secondHand = dealer.dealDealersHand();
         assertNotSame(firstHand, secondHand, "Each dealHand call should return a new hand");
     }
 }

@@ -1,7 +1,8 @@
 WelcomeController.class
 Deck.class
-ThreeCardLogic.class
 Player.class
+ThreeCardLogic.class
+CardValueConverter.class
 GameController.class
 Card.class
 Dealer.class

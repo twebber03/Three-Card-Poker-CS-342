@@ -11,18 +11,25 @@ public class Dealer {
 
     //    will return an ArrayList<Card> of three cards removed from
     //        theDeck.
+
+    public ArrayList<Card> dealDealersHand(){
+        dealersHand.clear();
+        dealersHand = dealHand();
+        return new ArrayList<>(dealersHand); // return copy of dealersHand, like a snapshot
+    }
+
     public ArrayList<Card> dealHand(){
         if(theDeck.size() <= 34){ // check to see if there are less then 34 cards left, if so randomize the deck
             System.out.println("Not enough cards left. Reshuffling a new deck.");
             theDeck.newDeck();
         }
-        dealersHand.clear(); // clears dealers previous hand
 
+        ArrayList<Card> hand = new ArrayList<>();
 
         for(int i = 0; i < 3; i++){
-            dealersHand.add(theDeck.remove(0));
+            hand.add(theDeck.remove(0));
         }
 
-        return new ArrayList<>(dealersHand); // return copy of current dealers hand with another arraylist
+        return new ArrayList<>(hand);
     }
 }
