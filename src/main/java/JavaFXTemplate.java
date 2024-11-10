@@ -5,6 +5,9 @@ import javafx.animation.SequentialTransition;
 import javafx.application.Application;
 import javafx.scene.control.Button;
 import javafx.scene.Scene;
+import javafx.scene.Parent;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Border;
@@ -15,11 +18,16 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.scene.layout.HBox;
 import javafx.util.Duration;
+import javafx.fxml.FXMLLoader;
 
 
 public class JavaFXTemplate extends Application {
 
-//	Button button1=new Button("Exit"), button2=new Button("Play");
+	Button exit=new Button("Exit");
+	Button deal=new Button("Deal"), play=new Button("Play"), fold=new Button("Fold"), freshstart=new Button("Fresh Start"), look=new Button("New Look");
+	Button sdeal=new Button("Deal"), splay=new Button("Play"), sfold=new Button("Fold");
+	TextField title=new TextField(), name1=new TextField(), name2=new TextField(), totalwinning=new TextField(), stotalwinning=new TextField(), dealer=new TextField(), log=new TextField();
+    TextField pair=new TextField(), ante=new TextField(), spair=new TextField(), sante=new TextField();
 //	TextField title=new TextField(), message=new TextField();
 //    BorderPane layout=new BorderPane();
 
@@ -32,17 +40,21 @@ public class JavaFXTemplate extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
-		Button button1=new Button("Exit"), button2=new Button("Play");
+		//FXMLLoader loader=new FXMLLoader(getClass().getResource("Example.fxml"));
+		//Parent load=loader.load();
+		Image picture=new Image("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/A_studio_image_of_a_hand_of_playing_cards._MOD_45148377.jpg/220px-A_studio_image_of_a_hand_of_playing_cards._MOD_45148377.jpg");
+		Button button2=new Button("Play");
 		TextField title=new TextField(), message=new TextField();
 		BorderPane layout=new BorderPane();
-
+        button2.setStyle("-fx-background-color: green");
+        exit.setStyle("-fx-background-color: red");
 		primaryStage.setTitle("Welcome Screen");
-		button1.setMinWidth(200);
-		button2.setMinWidth(200);
+		exit.setMinWidth(200);
+		button2.setMinWidth(300);
 		title.setText("THREE CARD POKER");
-		title.setMinWidth(600);
+		title.setStyle("-fx-font-size: 36px");
 		message.setText("Welcome to 3 Card Poker! Get ready to trust your luck and skill! Are you ready to play!");
-        message.setMinWidth(400);
+        message.setStyle("-fx-font-size: 20px");
 
 //		primaryStage.setTitle("Welcome to JavaFX");
 //
@@ -74,53 +86,53 @@ public class JavaFXTemplate extends Application {
 //	     Scene scene = new Scene(root, 700,700);
 //			primaryStage.setScene(scene);
 //			primaryStage.show();
-		HBox buttonbox=new HBox(20, button1, button2);
-		layout.setTop(title);
+		ImageView view= new ImageView(picture);
+		view.setFitWidth(300);
+		view.setFitHeight(300);
+		VBox pic=new VBox();
+		pic.getChildren().add(view);
+		HBox buttonbox=new HBox(20, exit, button2);
+		VBox titlesection=new VBox(pic, title);
+		layout.setTop(titlesection);
 		layout.setCenter(message);
 		layout.setBottom(buttonbox);
+		layout.setStyle("-fx-background-color: lightblue");
 		Scene window=new Scene(layout, 700, 700);
-
 		button2.setOnAction(e->{
 			primaryStage.setScene(play());
-			primaryStage.setTitle("Loading...");
 			primaryStage.setTitle("Play Screen");
 		});
-		button1.setOnAction(e-> primaryStage.close());
+		exit.setOnAction(e-> primaryStage.close());
 		primaryStage.setScene(window);
 		primaryStage.show();
 	}
 
-//	private Scene welcome(){
-//		button1.setMinWidth(200);
-//		button2.setMinWidth(200);
-//		title.setText("THREE CARD POKER");
-//		title.setMinWidth(600);
-//		message.setText("Welcome to 3 Card Poker! Get ready to trust your luck and skill! Are you ready to play!");
-//		message.setMinWidth(400);
-//		HBox buttonbox=new HBox(20, button1, button2);
-//		layout.setTop(title);
-//		layout.setCenter(message);
-//		layout.setBottom(buttonbox);
-//		return new Scene(layout, 700, 700);
-//	}
 
 	private Scene play(){
-		TextField title=new TextField(), name1=new TextField(), name2=new TextField(), totalwinning=new TextField(), stotalwinning=new TextField(), dealer=new TextField(), log=new TextField();
+		//TextField title=new TextField(), name1=new TextField(), name2=new TextField(), totalwinning=new TextField(), stotalwinning=new TextField(), dealer=new TextField(), log=new TextField();
 		BorderPane layout=new BorderPane();
 		title.setText("Hi, this is the play screen");
 		name1.setText("Player 1");
 		name2.setText("Player 2");
+		pair.setText("Pair Plus $");
+		ante.setText("Ante $ ");
+		spair.setText("Pair Plus $");
+		sante.setText("Ante $ ");
 		dealer.setText("Dealer");
-		log.setText("Log Info");
+		dealer.setStyle("-fx-font-size: 30px");
+		dealer.setMinWidth(400);
+		log.setText("Play Log");
+		log.setMinSize(200, 300);
+		log.setStyle("-fx-font-size: 25px");
 		totalwinning.setText("Total Winnings: $");
 		stotalwinning.setText("Total Winnings: $");
-		Button button3=new Button("Deal"), button4=new Button("Play"), button5=new Button("Fold"), exit=new Button("Exit"), freshstart=new Button("Fresh Start"), look=new Button("New Look");
-		Button sbutton3=new Button("Deal"), sbutton4=new Button("Play"), sbutton5=new Button("Fold");
-		HBox buttons=new HBox(button3, button4, button5), sbuttons=new HBox(sbutton3, sbutton4, sbutton5);
-		VBox player1=new VBox(name1, buttons, totalwinning);
-		VBox player2=new VBox(name2, sbuttons, stotalwinning);
+		HBox buttons=new HBox(deal, play, fold), sbuttons=new HBox(sdeal, splay, sfold);
+		VBox player1=new VBox(pair, ante, name1, buttons, totalwinning);
+		VBox player2=new VBox(spair, sante, name2, sbuttons, stotalwinning);
 		VBox menu=new VBox(exit, freshstart, look);
 		HBox Topbar= new HBox(menu, dealer, log);
+		layout.setStyle("-fx-background-color: lightblue");
+		look.setOnAction(e->layout.setStyle("-fx-background-color: lightgreen"));
 		layout.setTop(Topbar);
 		layout.setLeft(player1);
 		layout.setRight(player2);
