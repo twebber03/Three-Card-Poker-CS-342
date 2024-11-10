@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="DealerTest" time="0.041" tests="6" errors="0" skipped="0" failures="2">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="DealerTest" time="0.038" tests="6" errors="0" skipped="0" failures="2">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-23\bin"/>
-    <property name="sun.java.command" value="C:\Users\thoma\AppData\Local\Temp\surefire6502255344209594914\surefirebooter11024586832528442901.jar C:\Users\thoma\AppData\Local\Temp\surefire6502255344209594914 2024-11-09T19-54-19_160-jvmRun1 surefire16012914917124659160tmp surefire_05543201826586164432tmp"/>
+    <property name="sun.java.command" value="C:\Users\thoma\AppData\Local\Temp\surefire2458341496106704517\surefirebooter2083041381929035016.jar C:\Users\thoma\AppData\Local\Temp\surefire2458341496106704517 2024-11-09T20-14-15_887-jvmRun1 surefire18145455951337370337tmp surefire_018255650115977560712tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\thoma\IdeaProjects\JavaFX_MavenTemplate_VS1 2\target\test-classes;C:\Users\thoma\IdeaProjects\JavaFX_MavenTemplate_VS1 2\target\classes;C:\Users\thoma\.m2\repository\org\junit\jupiter\junit-jupiter\5.9.1\junit-jupiter-5.9.1.jar;C:\Users\thoma\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.1\junit-jupiter-api-5.9.1.jar;C:\Users\thoma\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\thoma\.m2\repository\org\junit\platform\junit-platform-commons\1.9.1\junit-platform-commons-1.9.1.jar;C:\Users\thoma\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\thoma\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.1\junit-jupiter-params-5.9.1.jar;C:\Users\thoma\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.1\junit-jupiter-engine-5.9.1.jar;C:\Users\thoma\.m2\repository\org\junit\platform\junit-platform-engine\1.9.1\junit-platform-engine-1.9.1.jar;C:\Users\thoma\.m2\repository\org\openjfx\javafx-controls\19.0.2.1\javafx-controls-19.0.2.1.jar;C:\Users\thoma\.m2\repository\org\openjfx\javafx-controls\19.0.2.1\javafx-controls-19.0.2.1-win.jar;C:\Users\thoma\.m2\repository\org\openjfx\javafx-graphics\19.0.2.1\javafx-graphics-19.0.2.1.jar;C:\Users\thoma\.m2\repository\org\openjfx\javafx-graphics\19.0.2.1\javafx-graphics-19.0.2.1-win.jar;C:\Users\thoma\.m2\repository\org\openjfx\javafx-base\19.0.2.1\javafx-base-19.0.2.1.jar;C:\Users\thoma\.m2\repository\org\openjfx\javafx-base\19.0.2.1\javafx-base-19.0.2.1-win.jar;C:\Users\thoma\.m2\repository\org\openjfx\javafx-fxml\19.0.2.1\javafx-fxml-19.0.2.1.jar;C:\Users\thoma\.m2\repository\org\openjfx\javafx-fxml\19.0.2.1\javafx-fxml-19.0.2.1-win.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\thoma\AppData\Local\Temp\surefire6502255344209594914\surefirebooter11024586832528442901.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\thoma\AppData\Local\Temp\surefire2458341496106704517\surefirebooter2083041381929035016.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="23+37-2369"/>
@@ -58,9 +58,9 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="testDeckOrderChangesAfterReshuffle" classname="DealerTest" time="0.018"/>
-  <testcase name="testDealersHandClearedBetweenDeals" classname="DealerTest" time="0.011">
-    <failure message="Each dealHand call should return a new hand ==&gt; expected: not same but was: &lt;[ACE of C, 2 of C, 9 of S]&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Each dealHand call should return a new hand ==> expected: not same but was: <[ACE of C, 2 of C, 9 of S]>
+  <testcase name="testDeckOrderChangesAfterReshuffle" classname="DealerTest" time="0.016"/>
+  <testcase name="testDealersHandClearedBetweenDeals" classname="DealerTest" time="0.01">
+    <failure message="Each dealHand call should return a new hand ==&gt; expected: not same but was: &lt;[ACE of C, 3 of D, 2 of C]&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Each dealHand call should return a new hand ==> expected: not same but was: <[ACE of C, 3 of D, 2 of C]>
 	at DealerTest.testDealersHandClearedBetweenDeals(DealerTest.java:60)
 ]]></failure>
   </testcase>
@@ -72,6 +72,6 @@
     <system-out><![CDATA[Not enough cards left. Reshuffling a new deck.
 ]]></system-out>
   </testcase>
-  <testcase name="testDealerDeckInitialization" classname="DealerTest" time="0"/>
-  <testcase name="testDealHandSize" classname="DealerTest" time="0"/>
+  <testcase name="testDealerDeckInitialization" classname="DealerTest" time="0.001"/>
+  <testcase name="testDealHandSize" classname="DealerTest" time="0.001"/>
 </testsuite>
