@@ -34,14 +34,19 @@ public class DealerTest {
     // Test 8: Check that dealHand reshuffles when fewer than 35 cards are left
     @Test
     public void testReshuffleWhenLowCards() {
-        // Deal multiple hands to reduce deck size below 34 cards
-        for (int i = 0; i < 7; i++) {
+        // Deplete the deck until it should trigger a reshuffle
+        while (dealer.theDeck.size() > 34) {
             dealer.dealHand();
         }
-        // Now the deck should reshuffle and return 52 cards
+
+        // The next deal should trigger a reshuffle because we will be below 34 cards
         dealer.dealHand();
-        assertEquals(49, dealer.theDeck.size(), "Deck should reshuffle to 52 cards if fewer than 35 cards left");
+
+        // Check that after reshuffling and dealing one hand, the deck size is reduced by three cards from 52 to 49
+        int expectedSizeAfterDeal = 52 - 3; // each deal removes 3 cards
+        assertEquals(dealer.theDeck.size(), expectedSizeAfterDeal, "Deck should be reset to 52 cards after reshuffling and should be 49 after dealing 3 cards");
     }
+
 
     // Test 9: Check that reshuffling results in a unique order compared to the initial
     @Test
