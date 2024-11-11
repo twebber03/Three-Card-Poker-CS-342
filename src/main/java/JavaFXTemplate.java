@@ -15,6 +15,11 @@ public class JavaFXTemplate extends Application {
 	private static final double WINDOW_WIDTH = 800;
 	private static final double WINDOW_HEIGHT = 600;
 
+	private static final String DEFAULT_CSS = "/styles.css";
+	private static final String NEW_LOOK_CSS = "/newlook.css";
+
+	private boolean isDefaultStyle = true;
+
 	@Override
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
@@ -45,10 +50,13 @@ public class JavaFXTemplate extends Application {
 	}
 
 	public void showGamePlayScreen() throws Exception {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("game.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/game.fxml"));
 		Scene scene = new Scene(loader.load());
-		//scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("resources/game.css")).toExternalForm());
-		scene.getStylesheets().add("styles.css");
+
+		// Load CSS if necessary
+		scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/styles.css")).toExternalForm());
+
+		// Get the GameController and set the main app reference
 		GameController controller = loader.getController();
 		controller.setMainApp(this);
 
@@ -56,7 +64,32 @@ public class JavaFXTemplate extends Application {
 		primaryStage.show();
 	}
 
+	public void applyNewLook() {
+		Scene scene = primaryStage.getScene(); // Get the current scene
+		scene.getStylesheets().clear(); // Clear existing stylesheets
+
+		if (isDefaultStyle) {
+			// Apply new look CSS
+			scene.getStylesheets().add(getClass().getResource(NEW_LOOK_CSS).toExternalForm());
+			isDefaultStyle = false; // Set flag to indicate new look is now active
+		} else {
+			// Revert to default CSS
+			scene.getStylesheets().add(getClass().getResource(DEFAULT_CSS).toExternalForm());
+			isDefaultStyle = true; // Set flag to indicate default style is now active
+		}
+	}
+
+	public void exitApplication() {
+		if (primaryStage != null) {
+			primaryStage.close(); // Close the primary stage to exit the application
+		} else {
+			System.exit(0); // Fallback in case primaryStage is null
+		}
+	}
+
+
 	public static void main(String[] args) {
 		launch(args);
 	}
+
 }

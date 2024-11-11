@@ -1,0 +1,69 @@
+/* New Look CSS */
+
+.root {
+    -fx-background-color: linear-gradient(to bottom, #2c3e50, #4ca1af);
+    -fx-font-family: "Arial";
+}
+
+.title-label {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ecf0f1;
+    -fx-padding: 20px;
+}
+
+.hand-label, .section-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ecf0f1;
+    -fx-padding: 5px 0;
+}
+
+.card-container {
+    -fx-spacing: 8px;
+}
+
+.betting-section {
+    -fx-background-color: #34495e;
+    -fx-padding: 20px;
+    -fx-border-color: #ecf0f1;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+.text-area-welcome {
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 14px;
+    -fx-padding: 10px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.button-exit, .button-play, .bet-button, .deal-button {
+    -fx-background-color: #1abc9c;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.button-exit:hover, .button-play:hover, .bet-button:hover, .deal-button:hover {
+    -fx-background-color: #16a085;
+}
+
+.winnings-display, .bets-label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #ecf0f1;
+}
+
+.menu-bar {
+    -fx-background-color: #1abc9c;
+    -fx-padding: 10px;
+}
+
+.menu-item {
+    -fx-text-fill: #ffffff;
+}

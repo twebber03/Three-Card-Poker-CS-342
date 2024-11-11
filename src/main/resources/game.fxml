@@ -1,56 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.geometry.Insets?>
 
-<VBox xmlns="http://javafx.com/javafx/8"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="GameController"
-      spacing="20"
-      alignment="CENTER"
-      styleClass="game-screen">
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameController" styleClass="game-screen">
+    <!-- Menu Bar -->
+    <top>
+        <MenuBar>
+            <Menu text="Options">
+                <MenuItem text="Exit" onAction="#handleExit"/>
+                <MenuItem text="Fresh Start" onAction="#handleFreshStart"/>
+                <MenuItem text="New Look" onAction="#handleNewLook"/>
+            </Menu>
+        </MenuBar>
+    </top>
 
-    <padding>
-        <Insets top="20" right="20" bottom="20" left="20"/>
-    </padding>
+    <!-- Center section containing dealer and players -->
+    <center>
+        <VBox alignment="CENTER" spacing="20">
+            <!-- Dealer Hand Section -->
+            <VBox alignment="CENTER" spacing="10">
+                <Label text="DEALER HAND" styleClass="section-label"/>
+                <HBox fx:id="dealerHand" spacing="10" alignment="CENTER" styleClass="hand-container">
+                    <!-- Placeholder for dealer cards -->
+                    <Label text="🂠" styleClass="card"/>
+                    <Label text="🂠" styleClass="card"/>
+                    <Label text="🂠" styleClass="card"/>
+                </HBox>
+            </VBox>
 
-    <Label text="THREE CARD POKER" styleClass="title-label"/>
+            <!-- Player Area -->
+            <HBox alignment="CENTER" spacing="50">
+                <!-- Player 1 Section -->
+                <VBox alignment="CENTER" spacing="10">
+                    <Label text="PLAYER 1" styleClass="player-label"/>
+                    <Label text="Pair Plus Bet" styleClass="bet-label"/>
+                    <TextField fx:id="player1PairPlusBet" promptText="" styleClass="bet-field"/>
+                    <Label text="Ante Bet" styleClass="bet-label"/>
+                    <TextField fx:id="player1AnteBet" promptText="" styleClass="bet-field"/>
 
-    <VBox spacing="10" alignment="CENTER">
-        <Label text="Dealer's Hand:" styleClass="hand-label"/>
-        <HBox fx:id="dealerHand" spacing="10" alignment="CENTER" styleClass="hand-container"/>
-    </VBox>
+                    <HBox spacing="10">
+                        <Button fx:id="player1DealButton" text="Deal" onAction="#handlePlayer1Deal" styleClass="action-button"/>
+                        <Button fx:id="player1PlayButton" text="Play" onAction="#handlePlayer1Play" styleClass="action-button"/>
+                        <Button fx:id="player1FoldButton" text="Fold" onAction="#handlePlayer1Fold" styleClass="action-button"/>
+                    </HBox>
 
-    <VBox spacing="10" alignment="CENTER">
-        <Label text="Player's Hand:" styleClass="hand-label"/>
-        <HBox fx:id="playerHand" spacing="10" alignment="CENTER" styleClass="hand-container"/>
-    </VBox>
+                    <HBox fx:id="player1Hand" spacing="10" alignment="CENTER" styleClass="hand-container">
+                        <!-- Placeholder for player 1 cards -->
+                        <Label text="🂠" styleClass="card"/>
+                        <Label text="🂠" styleClass="card"/>
+                        <Label text="🂠" styleClass="card"/>
+                    </HBox>
 
-    <VBox spacing="10" alignment="CENTER" styleClass="betting-section">
-        <Label text="Place Your Bets" styleClass="section-label"/>
+                    <Label text="Total Winnings" styleClass="winnings-label"/>
+                    <Label fx:id="player1Winnings" text="" styleClass="winnings-amount"/>
+                </VBox>
 
-        <GridPane hgap="10" vgap="5" alignment="CENTER">
-            <Label text="Ante Bet ($5-$25):" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-            <TextField fx:id="anteBetField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <!-- Player 2 Section -->
+                <VBox alignment="CENTER" spacing="10">
+                    <Label text="PLAYER 2" styleClass="player-label"/>
+                    <Label text="Pair Plus Bet" styleClass="bet-label"/>
+                    <TextField fx:id="player2PairPlusBet" promptText="" styleClass="bet-field"/>
+                    <Label text="Ante Bet" styleClass="bet-label"/>
+                    <TextField fx:id="player2AnteBet" promptText="" styleClass="bet-field"/>
 
-            <Label text="Pair Plus Bet ($0-$25):" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-            <TextField fx:id="pairPlusBetField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-        </GridPane>
+                    <HBox spacing="10">
+                        <Button fx:id="player2DealButton" text="Deal" onAction="#handlePlayer2Deal" styleClass="action-button"/>
+                        <Button fx:id="player2PlayButton" text="Play" onAction="#handlePlayer2Play" styleClass="action-button"/>
+                        <Button fx:id="player2FoldButton" text="Fold" onAction="#handlePlayer2Fold" styleClass="action-button"/>
+                    </HBox>
 
-        <HBox spacing="10" alignment="CENTER">
-            <Button text="Place Bets"
-                    fx:id="placeBetButton"
-                    onAction="#handlePlaceBet"
-                    styleClass="bet-button"/>
-            <Button text="Deal"
-                    fx:id="dealButton"
-                    onAction="#handleDeal"
-                    styleClass="deal-button"/>
-        </HBox>
-    </VBox>
+                    <HBox fx:id="player2Hand" spacing="10" alignment="CENTER" styleClass="hand-container">
+                        <!-- Placeholder for player 2 cards -->
+                        <Label text="🂠" styleClass="card"/>
+                        <Label text="🂠" styleClass="card"/>
+                        <Label text="🂠" styleClass="card"/>
+                    </HBox>
 
-    <VBox spacing="5" alignment="CENTER">
-        <Label fx:id="playerBetsLabel" styleClass="bets-label"/>
-        <Label fx:id="winningsDisplay" styleClass="winnings-label"/>
-    </VBox>
-</VBox>
+                    <Label text="Total Winnings" styleClass="winnings-label"/>
+                    <Label fx:id="player2Winnings" text="" styleClass="winnings-amount"/>
+                </VBox>
+            </HBox>
+        </VBox>
+    </center>
+
+    <!-- Play Log on the Right -->
+    <right>
+        <VBox alignment="TOP_CENTER" spacing="10" styleClass="log-container">
+            <Label text="Play Log" styleClass="log-label"/>
+            <TextArea fx:id="playLog" prefWidth="200" prefHeight="400" wrapText="true" editable="false"/>
+        </VBox>
+    </right>
+</BorderPane>
