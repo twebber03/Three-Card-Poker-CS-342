@@ -1,0 +1,39 @@
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+        <?xml version="1.0" encoding="UTF-8"?>
+        <?import javafx.scene.layout.*?>
+        <?import javafx.scene.control.*?>
+        <?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="WelcomeController"
+      spacing="20"
+      alignment="CENTER"
+      styleClass="welcome-screen">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="THREE CARD POKER" styleClass="title-label"/>
+
+    <TextArea text="Welcome to Three Card Poker! Place your bets and test your luck against the dealer. Good luck!"
+              wrapText="true"
+              editable="false"
+              maxWidth="400"
+              styleClass="welcome-text"/>
+
+    <HBox spacing="20" alignment="CENTER">
+        <Button text="Exit"
+                onAction="#handleExit"
+                styleClass="exit-button"/>
+        <Button text="Play"
+                onAction="#handleStartGame"
+                styleClass="play-button"/>
+    </HBox>
+</VBox>

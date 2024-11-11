@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="GameController"
+      spacing="20"
+      alignment="CENTER"
+      styleClass="game-screen">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="THREE CARD POKER" styleClass="title-label"/>
+
+    <VBox spacing="10" alignment="CENTER">
+        <Label text="Dealer's Hand:" styleClass="hand-label"/>
+        <HBox fx:id="dealerHand" spacing="10" alignment="CENTER" styleClass="hand-container"/>
+    </VBox>
+
+    <VBox spacing="10" alignment="CENTER">
+        <Label text="Player's Hand:" styleClass="hand-label"/>
+        <HBox fx:id="playerHand" spacing="10" alignment="CENTER" styleClass="hand-container"/>
+    </VBox>
+
+    <VBox spacing="10" alignment="CENTER" styleClass="betting-section">
+        <Label text="Place Your Bets" styleClass="section-label"/>
+
+        <GridPane hgap="10" vgap="5" alignment="CENTER">
+            <Label text="Ante Bet ($5-$25):" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="anteBetField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+            <Label text="Pair Plus Bet ($0-$25):" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="pairPlusBetField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        </GridPane>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Place Bets"
+                    fx:id="placeBetButton"
+                    onAction="#handlePlaceBet"
+                    styleClass="bet-button"/>
+            <Button text="Deal"
+                    fx:id="dealButton"
+                    onAction="#handleDeal"
+                    styleClass="deal-button"/>
+        </HBox>
+    </VBox>
+
+    <VBox spacing="5" alignment="CENTER">
+        <Label fx:id="playerBetsLabel" styleClass="bets-label"/>
+        <Label fx:id="winningsDisplay" styleClass="winnings-label"/>
+    </VBox>
+</VBox>

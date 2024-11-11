@@ -18,6 +18,10 @@ public class Player {
         playerHand = dealHand;
         return new ArrayList<>(playerHand);
      }
+
+     ArrayList<Card> getPlayerHand(){
+        return playerHand;
+     }
      // Getter method for totalWinnings
      int getTotalWinnings(){
         return totalWinnings;
