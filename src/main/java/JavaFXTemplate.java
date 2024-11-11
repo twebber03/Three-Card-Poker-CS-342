@@ -24,17 +24,18 @@ public class JavaFXTemplate extends Application {
 
 		try {
 			// Display a simple label
-			showGamePlayScreen();
+			// showGamePlayScreen();
+			showWelcomeScreen();
 		} catch (Exception e) {
-			System.err.println("Error starting application: " + e.getMessage());
+			System.out.println("Error starting application: " + e.getMessage());
 			Platform.exit();
 		}
 	}
 
 	public void showWelcomeScreen() throws Exception {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("/welcome.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("welcome.fxml"));
 		Scene scene = new Scene(loader.load());
-		scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("resources/welcome.css")).toExternalForm());
+		scene.getStylesheets().add("welcome.css");
 
 		WelcomeController controller = loader.getController();
 		controller.setMainApp(this);
@@ -44,14 +45,15 @@ public class JavaFXTemplate extends Application {
 	}
 
 	public void showGamePlayScreen() throws Exception {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("/game.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("game.fxml"));
 		Scene scene = new Scene(loader.load());
-		scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("resources/game.css")).toExternalForm());
-
+		//scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("resources/game.css")).toExternalForm());
+		scene.getStylesheets().add("styles.css");
 		GameController controller = loader.getController();
 		controller.setMainApp(this);
 
 		primaryStage.setScene(scene);
+		primaryStage.show();
 	}
 
 	public static void main(String[] args) {
