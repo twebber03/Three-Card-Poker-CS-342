@@ -3,6 +3,7 @@ import javafx.animation.PauseTransition;
 import javafx.animation.RotateTransition;
 import javafx.animation.SequentialTransition;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.scene.control.Button;
 import javafx.scene.Scene;
 import javafx.scene.Parent;
@@ -20,10 +21,14 @@ import javafx.scene.layout.HBox;
 import javafx.util.Duration;
 import javafx.fxml.FXMLLoader;
 
+import java.awt.event.ActionEvent;
+
 
 public class JavaFXTemplate extends Application {
 
 	Button exit=new Button("Exit");
+	Button yes=new Button("Yes"), no=new Button("No");
+	Button sexit=new Button("Exit");
 	Button deal=new Button("Deal"), play=new Button("Play"), fold=new Button("Fold"), freshstart=new Button("Fresh Start"), look=new Button("New Look");
 	Button sdeal=new Button("Deal"), splay=new Button("Play"), sfold=new Button("Fold");
 	TextField title=new TextField(), name1=new TextField(), name2=new TextField(), totalwinning=new TextField(), stotalwinning=new TextField(), dealer=new TextField(), log=new TextField();
@@ -103,6 +108,15 @@ public class JavaFXTemplate extends Application {
 			primaryStage.setTitle("Play Screen");
 		});
 		exit.setOnAction(e-> primaryStage.close());
+		sexit.setOnAction(e->{
+			primaryStage.setScene(exit());
+			primaryStage.setTitle("Exit Screen");
+		});
+		no.setOnAction(e->{
+			primaryStage.setScene(play());
+			primaryStage.setTitle("Play Screen");
+		});
+		yes.setOnAction(e->primaryStage.close());
 		primaryStage.setScene(window);
 		primaryStage.show();
 	}
@@ -129,7 +143,7 @@ public class JavaFXTemplate extends Application {
 		HBox buttons=new HBox(deal, play, fold), sbuttons=new HBox(sdeal, splay, sfold);
 		VBox player1=new VBox(pair, ante, name1, buttons, totalwinning);
 		VBox player2=new VBox(spair, sante, name2, sbuttons, stotalwinning);
-		VBox menu=new VBox(exit, freshstart, look);
+		VBox menu=new VBox(sexit, freshstart, look);
 		HBox Topbar= new HBox(menu, dealer, log);
 		layout.setStyle("-fx-background-color: lightblue");
 		look.setOnAction(e->layout.setStyle("-fx-background-color: lightgreen"));
@@ -139,5 +153,20 @@ public class JavaFXTemplate extends Application {
 		return new Scene(layout, 700, 700);
 	}
 
+	private Scene exit(){
+          TextField question=new TextField();
+          question.setText("Are you sure you want to exit?");
+          question.setStyle("-fx-font-size: 29px");
+          no.setMinWidth(300);
+          yes.setMinWidth(300);
+          yes.setStyle("-fx-background-color:green");
+          no.setStyle("-fx-background-color:red");
+          HBox buttons=new HBox(yes, no);
+          BorderPane exitlayout=new BorderPane();
+          exitlayout.setCenter(question);
+          exitlayout.setBottom(buttons);
+          exitlayout.setStyle("-fx-background-color: lightblue");
+          return new Scene(exitlayout, 700, 700);
+	}
 
 }
