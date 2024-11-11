@@ -3,6 +3,7 @@ Player.class
 ThreeCardLogic.class
 CardValueConverter.class
 GameController.class
+ExitController.class
 JavaFXTemplate.class
 WelcomeController.class
 Card.class

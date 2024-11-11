@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ExitController"
+      alignment="CENTER"
+      styleClass="Exit Screen"
+      stylesheets="exit.css">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    <TextArea text="Are you sure you want to exit?"
+              wrapText="true"
+              editable="false"
+              maxWidth="400"
+              styleClass="exit-text"/>
+    <HBox spacing="20" alignment="CENTER">
+        <Button text="Yes"
+                onAction="#handleexit"
+                styleClass="yes-button"/>
+        <Button text="No"
+                onAction="#handleResumeGame"
+                styleClass="no-button"/>
+    </HBox>
+</VBox>

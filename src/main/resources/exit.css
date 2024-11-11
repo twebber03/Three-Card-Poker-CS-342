@@ -1,0 +1,19 @@
+.text-area-question{
+   -fx-background-color: #333333
+   -fx-text-fill: #FFFFFF;
+   -fx-font-size: 14px;
+   -fx-border-color: #4CAF50;
+   -fx-border-radius: 2;
+}
+.button-yes {
+    -fx-background-color: #D32F2F;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+}
+.button-no {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+}

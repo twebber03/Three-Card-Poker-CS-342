@@ -203,9 +203,7 @@ public class GameController {
     @FXML
     private void handleExit() {
         if (mainApp != null) {
-            mainApp.exitApplication();
-        } else {
-            System.exit(0);
+            mainApp.showExitScreen(); // Replace exitApplication() with showExitScreen()
         }
     }
 

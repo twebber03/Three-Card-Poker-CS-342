@@ -7,6 +7,10 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import java.io.IOException;
+
 import java.util.Objects;
 
 public class JavaFXTemplate extends Application {
@@ -79,11 +83,27 @@ public class JavaFXTemplate extends Application {
 		}
 	}
 
-	public void exitApplication() {
-		if (primaryStage != null) {
-			primaryStage.close(); // Close the primary stage to exit the application
-		} else {
-			System.exit(0); // Fallback in case primaryStage is null
+	public void showExitScreen() {
+		try {
+			// Load the FXML
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(getClass().getResource("/exit.fxml"));
+			VBox exitScreen = loader.load();
+
+			// Create new stage for exit dialog
+			Stage exitStage = new Stage();
+			exitStage.setTitle("Exit Confirmation");
+			exitStage.initModality(Modality.WINDOW_MODAL); // Makes it modal
+			exitStage.initOwner(primaryStage); // Set the owner as the main window
+
+			// Create scene and show
+			Scene scene = new Scene(exitScreen);
+			scene.getStylesheets().add(getClass().getResource("/exit.css").toExternalForm());
+			exitStage.setScene(scene);
+			exitStage.show();
+
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 
