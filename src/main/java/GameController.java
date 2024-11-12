@@ -63,6 +63,14 @@ public class GameController {
 
     @FXML
     public void initialize() {
+        player1Hand.setStyle("-fx-spacing: 20px; -fx-alignment: center; -fx-padding: 15px; " +
+                "-fx-background-color: rgba(0, 0, 0, 0.7); -fx-border-radius: 10px;");
+        player2Hand.setStyle("-fx-spacing: 20px; -fx-alignment: center; -fx-padding: 15px; " +
+                "-fx-background-color: rgba(0, 0, 0, 0.7); -fx-border-radius: 10px;");
+        dealerHand.setStyle("-fx-spacing: 20px; -fx-alignment: center; -fx-padding: 15px; " +
+                "-fx-background-color: rgba(0, 0, 0, 0.7); -fx-border-radius: 10px;");
+
+        // Style for the play log
         player1PlayButton.setDisable(true);
         player1FoldButton.setDisable(true);
         player2PlayButton.setDisable(true);
@@ -254,6 +262,9 @@ public class GameController {
         handBox.getChildren().clear();
         for (Card card : hand) {
             Label cardLabel = new Label(card.toString());
+            cardLabel.setStyle("-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #ffffff; " +
+                    "-fx-padding: 10px 15px; -fx-background-color: rgba(0, 0, 0, 0.8); " +
+                    "-fx-border-radius: 8px; -fx-background-radius: 8px; -fx-alignment: center;");
             handBox.getChildren().add(cardLabel);
         }
     }

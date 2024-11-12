@@ -1,64 +1,127 @@
-/* New Look CSS */
-
+/* Root Background Styling */
 .root {
-    -fx-background-color: linear-gradient(to bottom, #2c3e50, #4ca1af);
-    -fx-font-family: "Arial";
+    -fx-background-image: url("../Images/GamePoker.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center;
 }
 
+
+/* Title Styling */
 .title-label {
-    -fx-font-size: 28px;
+    -fx-font-size: 32px;
     -fx-font-weight: bold;
-    -fx-text-fill: #ecf0f1;
+    -fx-text-fill: #ffffff;
     -fx-padding: 20px;
+    -fx-background-color: rgba(0, 0, 0, 0.7); /* Semi-opaque background */
+    -fx-border-radius: 10px;
 }
 
-.hand-label, .section-label {
-    -fx-font-size: 18px;
+/* Section Labels (Dealer, Player) */
+.section-label {
+    -fx-font-size: 26px; /* Larger for better readability */
     -fx-font-weight: bold;
-    -fx-text-fill: #ecf0f1;
-    -fx-padding: 5px 0;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 10px 0;
+    -fx-background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent for contrast */
+    -fx-border-radius: 8px;
 }
 
-.card-container {
-    -fx-spacing: 8px;
+/* Player Labels */
+.player-label, .dealer-label {
+    -fx-font-size: 30px; /* Larger font for emphasis */
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 15px 20px;
+    -fx-background-color: #3498db; /* Distinct background color */
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(one-pass-box, rgba(0, 0, 0, 0.8), 5, 0, 0, 3); /* Shadow effect */
+    -fx-alignment: center;
 }
 
-.betting-section {
-    -fx-background-color: #34495e;
-    -fx-padding: 20px;
-    -fx-border-color: #ecf0f1;
-    -fx-border-width: 2px;
+/* Hand Container Styling */
+.hand-container {
+    -fx-spacing: 20px; /* Increased spacing between cards */
+    -fx-alignment: center;
+    -fx-padding: 15px;
+    -fx-background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    -fx-border-radius: 10px;
+}
+
+/* Card Text Styling */
+.card-text {
+    -fx-font-size: 26px; /* Larger font size for card readability */
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 10px 15px;
+    -fx-background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background for contrast */
     -fx-border-radius: 8px;
     -fx-background-radius: 8px;
 }
 
-.text-area-welcome {
-    -fx-background-color: #95a5a6;
-    -fx-text-fill: #2c3e50;
-    -fx-font-size: 14px;
+/* Bet Field Styling */
+.bet-field {
+    -fx-background-color: rgba(44, 62, 80, 0.8); /* Dark background for contrast */
+    -fx-text-fill: #ecf0f1;
+    -fx-font-size: 16px;
     -fx-padding: 10px;
-    -fx-border-radius: 5px;
-    -fx-background-radius: 5px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-border-color: #ffffff;
+    -fx-border-width: 1px;
 }
 
-.button-exit, .button-play, .bet-button, .deal-button {
-    -fx-background-color: #1abc9c;
+/* Button Styling */
+.action-button {
+    -fx-background-color: #3498db;
     -fx-text-fill: #ffffff;
     -fx-font-weight: bold;
+    -fx-font-size: 16px;
     -fx-padding: 10px 20px;
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
 }
 
-.button-exit:hover, .button-play:hover, .bet-button:hover, .deal-button:hover {
-    -fx-background-color: #16a085;
+.action-button:hover {
+    -fx-background-color: #2980b9;
 }
 
-.winnings-display, .bets-label {
-    -fx-font-size: 16px;
-    -fx-text-fill: #ecf0f1;
+/* Total Winnings Section Styling */
+.winnings-section {
+    -fx-background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent background */
+    -fx-padding: 15px;
+    -fx-border-color: #ffffff;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-alignment: center;
 }
 
+.winnings-label {
+    -fx-font-size: 24px; /* Larger font size for "Total Winnings" */
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.winnings-amount {
+    -fx-font-size: 28px; /* Large font for emphasis */
+    -fx-font-weight: bold;
+    -fx-text-fill: #1abc9c; /* Highlight color */
+    -fx-padding: 5px 0;
+}
+
+
+
+.text-area-welcome, #playLog {
+    -fx-background-color: #2c3e50; /* Darker blue background for contrast */
+    -fx-text-fill: #ecf0f1; /* Light text color */
+    -fx-font-size: 18px; /* Larger font for readability */
+    -fx-padding: 15px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+/* Menu Bar Styling */
 .menu-bar {
     -fx-background-color: #1abc9c;
     -fx-padding: 10px;
@@ -66,4 +129,63 @@
 
 .menu-item {
     -fx-text-fill: #ffffff;
+}
+
+/* Label Styling for Bets */
+.bet-label, .winnings-label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent for better contrast */
+    -fx-padding: 5px;
+    -fx-border-radius: 5px;
+}
+
+/* Card Styling */
+.card {
+    -fx-font-size: 24px; /* Font size for card icons */
+    -fx-text-fill: #ecf0f1;
+}
+
+/* Target the dealer's hand container (HBox) specifically */
+#dealerHand {
+    -fx-background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for the dealer's hand */
+    -fx-padding: 10px; /* Padding around the dealer's hand */
+    -fx-border-color: #ffffff; /* White border */
+    -fx-border-width: 2px; /* Border thickness */
+    -fx-border-radius: 8px; /* Rounded corners */
+    -fx-spacing: 12px; /* Space between cards within the dealer's hand */
+    -fx-alignment: center; /* Center alignment */
+}
+
+/* Style the card labels inside the dealer's hand */
+#dealerHand .card {
+    -fx-font-size: 24px; /* Increase font size for readability */
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff; /* White text color */
+    -fx-padding: 8px 12px; /* Padding inside each card label */
+    -fx-background-color: rgba(0, 0, 0, 0.8); /* Dark background for cards */
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(one-pass-box, rgba(0, 0, 0, 0.8), 5, 0, 0, 2); /* Shadow for depth */
+}
+
+#player1Hand .card{
+-fx-font-size: 24px; /* Increase font size for readability */
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff; /* White text color */
+    -fx-padding: 8px 12px; /* Padding inside each card label */
+    -fx-background-color: rgba(0, 0, 0, 0.8); /* Dark background for cards */
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(one-pass-box, rgba(0, 0, 0, 0.8), 5, 0, 0, 2); /* Shadow for depth */
+}
+#player2Hand .card{
+-fx-font-size: 24px; /* Increase font size for readability */
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff; /* White text color */
+    -fx-padding: 8px 12px; /* Padding inside each card label */
+    -fx-background-color: rgba(0, 0, 0, 0.8); /* Dark background for cards */
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(one-pass-box, rgba(0, 0, 0, 0.8), 5, 0, 0, 2); /* Shadow for depth */
 }
