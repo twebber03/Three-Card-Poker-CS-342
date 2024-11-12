@@ -75,6 +75,6 @@ Sound effects
 Statistics tracking
 Player profiles
 Additional betting options
-Author
+## Authors
 Thomas Webber and Shane Abraham
 
