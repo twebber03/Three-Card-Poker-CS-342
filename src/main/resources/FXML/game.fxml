@@ -54,7 +54,7 @@
                     </HBox>
 
                     <Label text="Total Winnings" styleClass="winnings-label"/>
-                    <Label fx:id="player1Winnings" text="\$0" styleClass="winnings-amount"/>
+                    <Label fx:id="player1Winnings" text='"$0"' styleClass="winnings-amount"/>
                 </VBox>
 
                 <!-- Player 2 Section -->
@@ -81,17 +81,17 @@
                     </HBox>
 
                     <Label text="Total Winnings" styleClass="winnings-label"/>
-                    <Label fx:id="player2Winnings" text="\$0" styleClass="winnings-amount"/>
+                    <Label fx:id="player2Winnings" text='"$0"' styleClass="winnings-amount"/>
                 </VBox>
             </HBox>
         </VBox>
     </center>
 
-    <!-- Play Log on the Right -->
+    <!-- Play Log on the Right - Modified for better visibility -->
     <right>
         <VBox alignment="TOP_CENTER" spacing="10" styleClass="log-container">
-            <Label text="Play Log" styleClass="log-label"/>
-            <TextArea fx:id="playLog" prefWidth="200" prefHeight="400" wrapText="true" editable="false"/>
+            <Label text="Play Log" styleClass="log-header"/>
+            <TextArea fx:id="playLog" prefWidth="400" prefHeight="800" wrapText="true" editable="false" styleClass="play-log"/>
         </VBox>
     </right>
 </BorderPane>
