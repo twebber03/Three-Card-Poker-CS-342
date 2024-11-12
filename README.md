@@ -52,25 +52,37 @@ This project made is a graphical implementation of the popular casino game Three
 4. Run the application
    ```shell
    mvn javafx:run
-   How to Play
-## Game Tutorial
+## Game Tutorial (How to play)
 
-- Start the game from the welcome screen
-- Place Ante bet (required) and Pair Plus bet (optional)
-- Click 'Deal' to receive cards
+### Starting the Game
+- Start the game from the welcome screen.
+
+### Placing Bets
+- Place Ante bet (required) and Pair Plus bet (optional).
+
+### Dealing the Cards
+- Click 'Deal' to receive cards.
+
+### Choosing an Action
 - Choose to either:
-- Click 'Play' to continue (costs additional bet equal to Ante)
-- Click 'Fold' to forfeit current bets
-- Watch dealer reveal cards and see results
-- Winnings are automatically calculated and updated
-- New round begins after 5-second pause
-- Controls
-- Deal Button: Starts a new hand
-- Play Button: Continue with hand (matches Ante bet)
-- Fold Button: Surrender hand and forfeit bets
-- Fresh Start: Reset game and clear all bets/winnings
-- New Look: Change game appearance
-- Exit: Return to welcome screen
+  - Click 'Play' to continue (costs additional bet equal to Ante).
+  - Click 'Fold' to forfeit current bets.
+
+### Viewing Results
+- Watch dealer reveal cards and see results.
+- Winnings are automatically calculated and updated.
+
+### New Round
+- New round begins after a 5-second pause.
+
+## Controls
+
+- **Deal Button**: Starts a new hand.
+- **Play Button**: Continue with hand (matches Ante bet).
+- **Fold Button**: Surrender hand and forfeit bets.
+- **Fresh Start**: Reset game and clear all bets/winnings.
+- **New Look**: Change game appearance.
+
 ## Future Enhancements
 - Multiplayer networking capability
 - Sound effects
