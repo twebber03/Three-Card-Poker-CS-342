@@ -37,6 +37,8 @@
                     <TextField fx:id="player1PairPlusBet" promptText="" styleClass="bet-field"/>
                     <Label text="Ante Bet" styleClass="bet-label"/>
                     <TextField fx:id="player1AnteBet" promptText="" styleClass="bet-field"/>
+                    <Label text="Play Bet" styleClass="bet-label"/>
+                    <TextField fx:id="player1PlayBet" promptText="" styleClass="bet-field" editable="false"/>
 
                     <HBox spacing="10">
                         <Button fx:id="player1DealButton" text="Deal" onAction="#handlePlayer1Deal" styleClass="action-button"/>
@@ -52,7 +54,7 @@
                     </HBox>
 
                     <Label text="Total Winnings" styleClass="winnings-label"/>
-                    <Label fx:id="player1Winnings" text="" styleClass="winnings-amount"/>
+                    <Label fx:id="player1Winnings" text="\$0" styleClass="winnings-amount"/>
                 </VBox>
 
                 <!-- Player 2 Section -->
@@ -62,6 +64,8 @@
                     <TextField fx:id="player2PairPlusBet" promptText="" styleClass="bet-field"/>
                     <Label text="Ante Bet" styleClass="bet-label"/>
                     <TextField fx:id="player2AnteBet" promptText="" styleClass="bet-field"/>
+                    <Label text="Play Bet" styleClass="bet-label"/>
+                    <TextField fx:id="player2PlayBet" promptText="" styleClass="bet-field" editable="false"/>
 
                     <HBox spacing="10">
                         <Button fx:id="player2DealButton" text="Deal" onAction="#handlePlayer2Deal" styleClass="action-button"/>
@@ -77,7 +81,7 @@
                     </HBox>
 
                     <Label text="Total Winnings" styleClass="winnings-label"/>
-                    <Label fx:id="player2Winnings" text="" styleClass="winnings-amount"/>
+                    <Label fx:id="player2Winnings" text="\$0" styleClass="winnings-amount"/>
                 </VBox>
             </HBox>
         </VBox>

@@ -1,6 +1,6 @@
 /* Background for the entire welcome screen */
 .root {
-    -fx-background-image: url("WelcomePoker.jpg");
+    -fx-background-image: url("../Images/WelcomePoker.jpg");
     -fx-background-size: cover;
     -fx-background-position: center;
 }

@@ -2,9 +2,6 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.Parent;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import javafx.scene.layout.VBox;
@@ -19,8 +16,8 @@ public class JavaFXTemplate extends Application {
 	private static final double WINDOW_WIDTH = 800;
 	private static final double WINDOW_HEIGHT = 600;
 
-	private static final String DEFAULT_CSS = "/styles.css";
-	private static final String NEW_LOOK_CSS = "/newlook.css";
+	private static final String DEFAULT_CSS = "/CSS/styles.css";
+	private static final String NEW_LOOK_CSS = "/CSS/newlook.css";
 
 	private boolean isDefaultStyle = true;
 
@@ -42,9 +39,9 @@ public class JavaFXTemplate extends Application {
 	}
 
 	public void showWelcomeScreen() throws Exception {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("welcome.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML/welcome.fxml"));
 		Scene scene = new Scene(loader.load());
-		scene.getStylesheets().add("welcome.css");
+		scene.getStylesheets().add("CSS/welcome.css");
 
 		WelcomeController controller = loader.getController();
 		controller.setMainApp(this);
@@ -54,11 +51,11 @@ public class JavaFXTemplate extends Application {
 	}
 
 	public void showGamePlayScreen() throws Exception {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("/game.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/game.fxml"));
 		Scene scene = new Scene(loader.load());
 
 		// Load CSS if necessary
-		scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/styles.css")).toExternalForm());
+		scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/CSS/styles.css")).toExternalForm());
 
 		// Get the GameController and set the main app reference
 		GameController controller = loader.getController();
@@ -87,7 +84,7 @@ public class JavaFXTemplate extends Application {
 		try {
 			// Load the FXML
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("/exit.fxml"));
+			loader.setLocation(getClass().getResource("/FXML/exit.fxml"));
 			VBox exitScreen = loader.load();
 
 			// Create new stage for exit dialog
@@ -98,7 +95,7 @@ public class JavaFXTemplate extends Application {
 
 			// Create scene and show
 			Scene scene = new Scene(exitScreen);
-			scene.getStylesheets().add(getClass().getResource("/exit.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("/CSS/exit.css").toExternalForm());
 			exitStage.setScene(scene);
 			exitStage.show();
 

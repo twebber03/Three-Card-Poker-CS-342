@@ -6,8 +6,8 @@
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="ExitController"
       alignment="CENTER"
-      styleClass="Exit Screen"
-      stylesheets="exit.css">
+      styleClass="Exit Screen">
+<!--      stylesheets="../CSS/exit.css">-->
     <padding>
         <Insets top="20" right="20" bottom="20" left="20"/>
     </padding>
