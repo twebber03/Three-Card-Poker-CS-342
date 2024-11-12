@@ -8,9 +8,9 @@
 
 /* Title styling */
 .label-title {
-    -fx-font-size: 28px;
+    -fx-font-size: 35px;
     -fx-font-weight: bold;
-    -fx-text-fill: #FFFFFF;
+    -fx-text-fill: yellow;
     -fx-effect: dropshadow(gaussian, black, 4, 0, 0, 2);
 }
 
@@ -22,25 +22,25 @@
 }
 
 /* Welcome message box */
-.text-area-welcome {
-    -fx-background-color: #333333;
-    -fx-text-fill: #FFFFFF;
-    -fx-font-size: 14px;
-    -fx-border-color: #4CAF50;
+.welcome-text {
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+    -fx-font-size: 20px;
+    -fx-border-color: transparent;
     -fx-border-radius: 5;
 }
 
 /* Exit and Play button styles */
-.button-exit {
-    -fx-background-color: #D32F2F;
+.exit-button {
+    -fx-background-color: red;
     -fx-text-fill: white;
     -fx-font-weight: bold;
-    -fx-background-radius: 10;
+    -fx-background-radius: 30;
 }
 
-.button-play {
-    -fx-background-color: #4CAF50;
+.play-button {
+    -fx-background-color: green;
     -fx-text-fill: white;
     -fx-font-weight: bold;
-    -fx-background-radius: 10;
+    -fx-background-radius: 30;
 }
