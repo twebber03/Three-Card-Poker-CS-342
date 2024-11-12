@@ -1,10 +1,10 @@
 # Three Card Poker
 
-A JavaFX implementation of Three Card Poker casino game.
+A JavaFX FXML implementation of Three Card Poker casino game.
 
 ## Project Description
 
-This project is a graphical implementation of the popular casino game Three Card Poker. Players can play against a dealer, place various types of bets, and enjoy animations and visual feedback during gameplay.
+This project made is a graphical implementation of the popular casino game Three Card Poker. Players can play against a dealer, place various types of bets, and enjoy animations and visual feedback during gameplay. Was made for our CS 342 software design class at UIC. 
 
 ## Features
 
@@ -53,28 +53,30 @@ This project is a graphical implementation of the popular casino game Three Card
    ```shell
    mvn javafx:run
    How to Play
-Start the game from the welcome screen
-Place Ante bet (required) and Pair Plus bet (optional)
-Click 'Deal' to receive cards
-Choose to either:
-Click 'Play' to continue (costs additional bet equal to Ante)
-Click 'Fold' to forfeit current bets
-Watch dealer reveal cards and see results
-Winnings are automatically calculated and updated
-New round begins after 5-second pause
-Controls
-Deal Button: Starts a new hand
-Play Button: Continue with hand (matches Ante bet)
-Fold Button: Surrender hand and forfeit bets
-Fresh Start: Reset game and clear all bets/winnings
-New Look: Change game appearance
-Exit: Return to welcome screen
-Future Enhancements
-Multiplayer networking capability
-Sound effects
-Statistics tracking
-Player profiles
-Additional betting options
+## Game Tutorial
+
+- Start the game from the welcome screen
+- Place Ante bet (required) and Pair Plus bet (optional)
+- Click 'Deal' to receive cards
+- Choose to either:
+- Click 'Play' to continue (costs additional bet equal to Ante)
+- Click 'Fold' to forfeit current bets
+- Watch dealer reveal cards and see results
+- Winnings are automatically calculated and updated
+- New round begins after 5-second pause
+- Controls
+- Deal Button: Starts a new hand
+- Play Button: Continue with hand (matches Ante bet)
+- Fold Button: Surrender hand and forfeit bets
+- Fresh Start: Reset game and clear all bets/winnings
+- New Look: Change game appearance
+- Exit: Return to welcome screen
+## Future Enhancements
+- Multiplayer networking capability
+- Sound effects
+- Statistics tracking
+- Player profiles
+- Additional betting options
 ## Authors
 Thomas Webber and Shane Abraham
 
