@@ -1,46 +1,71 @@
-/* Background for the entire welcome screen */
-.root {
+.welcome-screen {
     -fx-background-image: url("../Images/WelcomePoker.jpg");
     -fx-background-size: cover;
     -fx-background-position: center;
 }
 
-
-/* Title styling */
 .label-title {
-    -fx-font-size: 35px;
+    -fx-font-size: 72px;
     -fx-font-weight: bold;
-    -fx-text-fill: yellow;
-    -fx-effect: dropshadow(gaussian, black, 4, 0, 0, 2);
+    -fx-text-fill: #FFD700;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 5);
+    -fx-background-color: rgba(0, 0, 0, 0.7);
+    -fx-padding: 20px 40px;
+    -fx-background-radius: 15;
 }
 
-/* Placeholder text for media */
-.label-placeholder {
-    -fx-font-style: italic;
-    -fx-font-size: 16px;
-    -fx-text-fill: #B0B0B0;
-}
-
-/* Welcome message box */
 .welcome-text {
-    -fx-background-color: transparent;
-    -fx-text-fill: black;
-    -fx-font-size: 20px;
+    -fx-font-size: 24px;
+    -fx-text-fill: black;  /* Changed from white to black */
+    -fx-background-color: rgba(255, 255, 255, 0.9);  /* Changed to white with high opacity */
+    -fx-background-radius: 15;
+    -fx-padding: 15;
+    -fx-text-alignment: center;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-background-insets: 0;
     -fx-border-color: transparent;
-    -fx-border-radius: 5;
+    -fx-control-inner-background: transparent;
+    -fx-text-box-border: transparent;
+    -fx-font-weight: bold;  /* Added bold to make text more visible */
 }
 
-/* Exit and Play button styles */
-.exit-button {
-    -fx-background-color: red;
-    -fx-text-fill: white;
+.welcome-text .content {
+    -fx-background-color: transparent;
+}
+
+.welcome-text:focused .content {
+    -fx-background-color: transparent;
+}
+
+.play-button, .exit-button {
+    -fx-font-size: 24px;
     -fx-font-weight: bold;
-    -fx-background-radius: 30;
+    -fx-background-radius: 25;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 5, 0, 0, 2);
 }
 
 .play-button {
-    -fx-background-color: green;
+    -fx-background-color: #32CD32;
     -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-background-radius: 30;
+}
+
+.play-button:hover {
+    -fx-background-color: #28A428;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 4);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.exit-button {
+    -fx-background-color: #DC143C;
+    -fx-text-fill: white;
+}
+
+.exit-button:hover {
+    -fx-background-color: #B01030;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 4);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
 }

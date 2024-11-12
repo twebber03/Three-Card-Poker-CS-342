@@ -7,10 +7,11 @@
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="WelcomeController"
       alignment="CENTER"
-      styleClass="welcome-screen">
+      styleClass="welcome-screen"
+      spacing="40">
 
     <padding>
-        <Insets top="20" right="20" bottom="20" left="20"/>
+        <Insets top="40" right="20" bottom="40" left="20"/>
     </padding>
 
     <Label text="THREE CARD POKER" styleClass="label-title"/>
@@ -18,16 +19,20 @@
     <TextArea text="Welcome to Three Card Poker! Place your bets and test your luck against the dealer. Good luck!"
               wrapText="true"
               editable="false"
-              maxWidth="500"
-              maxHeight="100"
+              maxWidth="700"
+              maxHeight="200"
               styleClass="welcome-text"/>
 
     <HBox spacing="100" alignment="CENTER">
         <Button text="Exit"
                 onAction="#handleExit"
-                styleClass="exit-button"/>
+                styleClass="exit-button"
+                prefWidth="150"
+                prefHeight="50"/>
         <Button text="Play"
                 onAction="#handleStartGame"
-                styleClass="play-button"/>
+                styleClass="play-button"
+                prefWidth="150"
+                prefHeight="50"/>
     </HBox>
 </VBox>
