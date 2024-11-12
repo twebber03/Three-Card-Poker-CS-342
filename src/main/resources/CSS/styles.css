@@ -228,3 +228,16 @@
     -fx-background-color: rgba(44, 62, 80, 1.0);
     -fx-border-color: #2ecc71;
 }
+
+.hand-container .card {
+    visibility: hidden;  /* Hide the placeholder cards */
+    -fx-opacity: 0;     /* Make them fully transparent */
+}
+
+.hand-container {
+    -fx-spacing: 10px;
+    -fx-alignment: center;
+    -fx-padding: 15px;
+    -fx-background-color: rgba(0, 0, 0, 0.7);
+    -fx-border-radius: 10px;
+}
